@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+
+.banner{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.banner_text
+{
+    position: absolute;
+    top: 18vw;
+    left: 38vw;
+    height: 8vw;
+    width: 20vw;
+    background-color: rgba(229, 223, 223, 0.521);
+    box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw #888888;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 3vw;
+    color: black;
+    z-index: 2;
+    
+}
+
+.banner_text_inside{
+    border-top: 0.15vw solid #888888;
+    border-bottom: 0.15vw solid #888888;
+    margin: 0.001vw;
+    padding: 0.6vw;
+    position: relative;
+    z-index: 2;
+}
+
+#about_us{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 3vw;
+    display: inline-block;
+    background-color: #71a5de;
+}
+
+.about_us_img{
+    display: inline-block;
+    padding-bottom: 2vw;
+    padding-top: 4vw;
+    padding-right: 11.82vw;
+    position: relative;
+    bottom: 50px;
+    left: 50px;
+}
+
+.about_us_img img{
+    border-radius: 1.5vw;
+}
+
+.about_us_txt{ 
+    display: inline-block;
+    width: 60vw;
+}
+
+#news{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 3vw;
+    padding-top: 3vw;
+    display: inline-block;
+    background-color: #a9def9;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.news_img{
+    display: inline-block;
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+    padding-right: 11.82vw;
+    position: relative;
+    bottom: 50px;
+    left : 40px;
+}
+
+.news_img img{
+    border-radius: 1.5vw;
+}
+
+.news_txt{ 
+    display: inline-block;
+    width: 60vw;
+    padding-left: 1.5vw;
+}
+
+#predictions{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 3vw;
+    padding-top: 3vw;
+    display: inline-block;
+    background-color: #809bce;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.predictions_img{
+    display: inline-block;
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+    padding-right: 11.82vw;
+}
+
+.predictions_img img{
+    border-radius: 1.5vw;
+}
+
+.predictions_txt{ 
+    display: inline-block;
+    width: 60vw;
+    padding-left: 2.5vw;
+}
+
+#footer
+{
+    text-align: center;
+    padding: 5%;
+    background-color: black;
+    color: white;
+}
+
+.p2
+{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 30px;
+    text-align: center;
+}

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="{% static 'styles/style1.css' %}">
+</head>
+<body>
+    <div class="hero" style= "padding-bottom: 100px;">
+        <div class="form-box" style="padding-bottom: 55px; padding-top: 20px;">
+            <h2 style="position: relative; left: 150px; top: 20px;">Login </h2>
+            <div style="position: relative; top: 40px;">
+                <div class="social-icons">
+                    <img src="{% static 'images/fb.png' %}">
+                    <img src="{% static 'images/gp.png' %}">
+                    <img src="{% static 'images/tw.png' %}">
+                </div>
+            </div>
+            <form id="login" class="input-group" action="/login/" method="post" style="margin-top: 20px;">
+                {% csrf_token %}
+                <input type="text" class="input-field" placeholder="Username" required name="username">
+                <input type="password" class="input-field" placeholder="Password" required name="password">
+                <div style="padding-top: 50px;">
+                    <button type="Submit" class="submit-btn">Log In</button>
+                </div>
+            </form><br><br>
+            <div style="padding-left: 30px; position: relative; top: 260px;">
+                <a href="http://127.0.0.1:8000/register/">New to the website , register to view content</a>
+            </div>
+            <div style="position: relative; bottom: 70px;">
+                <div class="msgdisp">
+                    {% if messages %}
+                        <ul class="messages" style="list-style: none;">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
+
+    function register(){
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+    }
+
+    function login(){
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+    }
+    </script>
+</body>
+</html>
