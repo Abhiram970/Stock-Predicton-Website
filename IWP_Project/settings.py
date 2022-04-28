@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'predictions.apps.PredictionsConfig',
     'register.apps.RegisterConfig',
     'login.apps.LoginConfig',
     'home.apps.HomeConfig',
