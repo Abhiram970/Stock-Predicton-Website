@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Predictions page </title>
+</head>
+<body>
+    <form action="/prediction/" method="post">
+        {% csrf_token %}
+        Enter the date : <input type = "text" name = "day">
+        Enter the month : <input type = "text" name = "month">
+        Enter the year : <input type = "text" name = "year">
+        <input type="submit" value="Submit values">
+    </form>
+    <div class="msgdisp">
+        {% if messages %}
+            <ul class="messages" style="list-style: none;">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
