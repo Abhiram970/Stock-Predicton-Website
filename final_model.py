@@ -64,27 +64,10 @@ plt.show()
 We've fit the data with the linear regression model and can plot out predicted stock prices vs the actual stock market prices.
 """
 
-plt.plot(x,y, label='Original')
-plt.plot(x_future, y_future, color='green', label='Actual future')
-plt.plot(x_future, Y_pred, color='red', label='Pred future linreg')
-plt.xlabel('Days')
-plt.ylabel('Close Price')
-plt.title('Tesla Stock Market price model')
-plt.legend()
-plt.show()
-
 mse = metrics.mean_squared_error(y_future,Y_pred)
 mean_squared_y = (sum(y_future)/len(y_future))**2
 print( "MSE = "+str(mse))
 print("Average error percentage = "+str(np.sqrt(mse/mean_squared_y)*100)+ "%")
-
-plt.plot(x_future, y_future, color='green', label='Actual future')
-plt.plot(x_future, Y_pred, color='red', label='Predicted future')
-plt.xlabel('Days')
-plt.ylabel('Close Price')
-plt.title('Tesla Stock Market price model')
-plt.legend()
-plt.show()
 
 models = []
 models.append(linear_regressor)
@@ -110,35 +93,10 @@ Y_pred = polyreg.predict(x_future)
 
 """Now we can also check how the polynomial featured prediction behaves on the test set."""
 
-plt.plot(x,y, color = 'blue', label='Actual stock prices')
-plt.scatter(X_test, y_pred, color='red', label='Polynomial regression model')
-plt.xlabel('Days')
-plt.ylabel('Close Price')
-plt.title('Tesla Stock Market price model')
-plt.legend()
-plt.show()
-
-plt.plot(x, y, color='blue', label='Original')
-plt.plot(x_future, y_future, color='green', label='Actual prices')
-plt.plot(x_future, Y_pred, color='red', label='Pred values polyreg')
-plt.xlabel('Days')
-plt.ylabel('Close Price')
-plt.title('Tesla Stock Market price model')
-plt.legend()
-plt.show()
-
 mse = metrics.mean_squared_error(y_future,Y_pred)
 score = polyreg.score(X_test,y_test)
 print( "MSE = "+str(mse))
 print("Percentage score = "+str(score*100)+ "%")
-
-plt.plot(x_future, y_future, color='green', label='Actual future')
-plt.plot(x_future, Y_pred, color='red', label='Pred future polyreg')
-plt.xlabel('Days')
-plt.ylabel('Close Price')
-plt.title('Tesla Stock Market price model')
-plt.legend()
-plt.show()
 
 models.append(polyreg)
 
@@ -163,27 +121,11 @@ for i in range(200):
         best_score = score
 
 Y_pred = linreg_model.predict(x_future)
-plt.plot(x,y, color='blue', label='Original')
-plt.plot(x_future, y_future, color='green', label='Actual prices')
-plt.plot(x_future, Y_pred, color='red', label='Pred values best linfit')
-plt.xlabel('Days')
-plt.ylabel('Close Price')
-plt.title('Tesla Stock Market price model')
-plt.legend()
-plt.show()
 
 mse = metrics.mean_squared_error(y_future,Y_pred)
 mean_squared_y = (sum(y_future)/len(y_future))**2
 print( "MSE = "+str(mse))
 print("Percentage score: " + str(best_score*100) + "%")
-
-plt.plot(x_future, y_future, color='green', label='Actual future prices')
-plt.plot(x_future, Y_pred, color='red', label='Pred future best linfit')
-plt.xlabel('Days')
-plt.ylabel('Close Price')
-plt.title('Tesla Stock Market price model')
-plt.legend()
-plt.show()
 
 models.append(linreg_model)
 
