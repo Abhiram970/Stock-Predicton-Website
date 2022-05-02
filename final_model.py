@@ -102,7 +102,13 @@ models.append(polyreg)
 
 """Adding polynomials improved our model somewhat, but not substantially.
 
-A better approximation for the immediate future stock prices might be found by excluding closing prices before the last major stock price fall. That would mean we would get a more accurate reading (closer line fit) for the last 70 or so days (e.g. the test data). But that does not mean it would be a great overall model. We can expect the steady market price increase to stop and reverse at some point (stock prices usually do), which the prediction accounts for, showing lower predictions than the actual data for the test set. Furthermore, the data set would be too small.
+A better approximation for the immediate future stock prices might be 
+found by excluding closing prices before the last major stock price fall. 
+That would mean we would get a more accurate reading (closer line fit) for the last 70 or 
+so days (e.g. the test data). But that does not mean it would be a great overall model. 
+We can expect the steady market price increase to stop and reverse at some point (stock prices usually do),
+ which the prediction accounts for, showing lower predictions than the actual data for the test set.
+Furthermore, the data set would be too small.
 """
 
 linreg_model = 0
