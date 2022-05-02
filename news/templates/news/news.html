@@ -38,7 +38,7 @@
             <a class="nav-link" style="color: black; font-size: x-large;"> | </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="news/" style="color: black; font-size: x-large;" href = "http://127.0.0.1:8000/news/">News / Blog</a>
+            <a class="nav-link" href="news/" style="color: black; font-size: x-large;" href = "http://127.0.0.1:8000/news/">News</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" style="color: black; font-size: x-large;"> | </a>
@@ -72,7 +72,7 @@
     <h1 style="text-align: center; font-size: 35px; position: relative; top: 40px;">Latest News</h1>
 <!-- Main -->
     <div class="container" style="position: relative; top: 80px;">
-      {% for hl, des, img , date,author , source , url in mylist %}
+      {% for hl, des, img , date, source , url in mylist %}
 
       <div class="card border-primary mb-2">
         <img src="{{ img }}" alt="No preview Image" style="text-align: center; font-size: 45px;">
@@ -84,9 +84,7 @@
         <h5 style="padding-left: 30px; font-size: 25px;">{{ des }}{{ value|linebreaks }}</h5>
         <h4> <span class="badge bg-success"> Published AT </span></h4>
         <h5 style="padding-left: 30px;font-size: 20px;">{{ date }}{{ value|linebreaks }}</h5>
-        <h4> <span class="badge bg-dark">Author</span></h4>
-        <h5 style="padding-left: 30px;font-size: 25px;">{{ author }}{{ value|linebreaks }}</h5>
-        <h4> <span class="badge bg-warning">Source</span></h4>
+        <h4> <span class="badge bg-dark">Source</span></h4>
         <h5 style="padding-left: 30px;font-size: 25px;">{{ source }}{{ value|linebreaks }}</h5>
         <h4> <span class="badge bg-primary">Source URL </span></h4>
         <h5><a href="{{url}}" target="_blank" style="padding-left: 30px;">{{url}}</a>{{ value|linebreaks }}</h5>

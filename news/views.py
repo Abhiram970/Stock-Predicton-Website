@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='http://127.0.0.1:8000/login/')
 def home2(request):
-    url = f'https://newsapi.org/v2/everything?q=business&from=2022-04-01&sortBy=publishedAt&lang=en&apiKey=5e448943e5cc43dea59d2f742c4f4d63'
+    url = f'https://gnews.io/api/v4/search?q=example&token=522813761f2a6540308e793ba2ecddfd'
     response = requests.get(url)
     data = response.json()
     articles = data['articles']
@@ -21,11 +21,11 @@ def home2(request):
         article = articles[i]
         desc.append(article['description'])
         news.append(article['title'])
-        img.append(article['urlToImage'])
+        img.append(article['image'])
         date.append(article['publishedAt'])
-        author.append(article['author'])
+        # author.append(article['author'])
         source.append(article['source']['name'])
         url.append(article['url'])
-    mylist = zip(news, desc, img,date,author,source,url)
+    mylist = zip(news, desc, img,date,source,url)
 
     return render(request, "news/news.html", context={"mylist": mylist})
