@@ -59,25 +59,29 @@ The news page features the latest news, articles of interest, latest trends and 
 <br><br>
 
 ## Project Outcomes
-The Login & Registration Pages
+The Login & Registration Page
+<br>
 <img src="Images/Login.jpeg">
 <img src="Images/Registration.jpeg">
 
 <br>
 
-The Home Pages
+The Home Page
+<br>
 <img src="Images/Home.jpeg">
-<img src="Images/Home1.jpeg">
 <img src="Images/Home2.jpeg">
+<img src="Images/Home3.jpeg">
 <img src="Images/Home4.jpeg">
 
 <br>
 
 The About Us Page
+<br>
 <img src="Images/AboutUs.jpeg">
 <img src="Images/About2.jpeg">
 
 <br>
 
 The Predictions Page
+<br>
 <img src="Images/Predictions.jpeg">
