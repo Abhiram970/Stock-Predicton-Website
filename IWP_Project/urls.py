@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from simple_chatbot.views import SimpleChatbot
 
 urlpatterns = [
     path('', include('home.urls')),
@@ -24,4 +25,7 @@ urlpatterns = [
     path('register/',include('register.urls')),
     path('prediction/',include('predictions.urls')),
     path('news/',include('news.urls')),
+    path("simple_chatbot/", SimpleChatbot.as_view())
 ]
+
+

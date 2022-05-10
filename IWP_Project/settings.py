@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'simple_chatbot',
+    'plotly'
 ]
 
 MIDDLEWARE = [
@@ -83,9 +85,9 @@ WSGI_APPLICATION = 'IWP_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'IWP_Project',
+        'NAME': 'iwp_project',
         'USER' : 'postgres',
-        'PASSWORD' : 'Abhiram707',
+        'PASSWORD' : 'postgres123',
         'HOST' : 'localhost'
     }
 }
@@ -135,3 +137,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SIMPLE_CHATBOT = {
+    'responses': (
+        ("predictions.responses.GreetingResponse", "Greeting"),
+        ("predictions.responses.GoodbyeResponse", "Goodbye"),
+    ),
+}

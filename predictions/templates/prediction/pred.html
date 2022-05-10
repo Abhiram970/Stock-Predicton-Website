@@ -13,9 +13,238 @@
     <link rel="stylesheet" href="{% static 'styles/aboutUs_styles.css' %}">
     <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'styles/hover_bubbles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title> Predictions page </title>
+
+    <style>
+      .box
+    {
+        display: flex;
+        padding: 5%;
+    }
+      .content-container
+      {
+      background-color: rgba(255, 255, 255, .75);
+      padding: 1em 2em;
+      width: 95%;
+      color: #495057;
+
+    }
+    .move{
+        background-color: #343A40;
+        border-radius: 16px;  
+        color: #fff;
+        cursor: pointer;
+        padding: 12px 32px; 
+        }
+        .move:hover{
+        background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+        animation:slide 3s linear infinite;
+        }
+        @keyframes slide { 
+        to {
+            background-position:20vw;
+        }
+        }
+        h1, h2 {
+			color: #888;
+			margin:0;
+			font-weight:normal;
+		}
+		h1{ padding-top: 1.5em; padding-bottom: 2em; } 
+		h2 {
+			clear:both;
+			color: #aaa;
+			padding: 2em 0 0.3em
+		}
+		em {
+			display: block;
+			margin: .5em auto 2em;
+			color: #bbb;
+		}
+
+		p, p a { 
+			color: #aaa;
+			text-decoration: none;
+		}
+		p a:hover,
+		p a:focus {
+			text-decoration: underline;
+		}
+		p + p { color: #bbb; margin-top: 2em;}
+		.detail {position: absolute; text-align: right; right: 5px; bottom: 5px; width: 50%;}
+		
+		a[href*="intent"] {
+			display:inline-block;
+			margin-top: 0.4em;
+		}
+
+		/*  
+		 * Rating styles
+		 */
+		.rating {
+			width: 226px;
+			margin: 0 auto 1em;
+			font-size: 45px;
+			overflow:hidden;
+		}
+.rating input {
+  float: right;
+  opacity: 0;
+  position: absolute;
+}
+		.rating a,
+    .rating label {
+			float:right;
+			color: #aaa;
+			text-decoration: none;
+			-webkit-transition: color .4s;
+			-moz-transition: color .4s;
+			-o-transition: color .4s;
+			transition: color .4s;
+		}
+.rating label:hover ~ label,
+.rating input:focus ~ label,
+.rating label:hover,
+		.rating a:hover,
+		.rating a:hover ~ a,
+		.rating a:focus,
+		.rating a:focus ~ a		{
+			color: orange;
+			cursor: pointer;
+		}
+		.rating2 {
+			direction: rtl;
+		}
+		.rating2 a {
+			float:none
+		}
+
+    .div-c {
+	 margin: 32px;
+}
+.div-c span {
+	 width: 10px;
+	 height: 10px;
+	 background-color: #ed49fe;
+	 display: inline-block;
+	 margin: 1px;
+	 border-radius: 50%;
+}
+.div-c span:nth-child(1) {
+	 animation: bounce 1s infinite;
+}
+.div-c span:nth-child(2) {
+	 animation: bounce 1s infinite 0.2s;
+}
+.div-c span:nth-child(3) {
+	 animation: bounce 1s infinite 0.4s;
+}
+ @keyframes bounce {
+	 0% {
+		 transform: translateY(0px);
+	}
+	 50% {
+		 transform: translateY(8px);
+	}
+	 100% {
+		 transform: translateY(0px);
+	}
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+
+
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  height: 100vh;
+  /* align-items: center;
+  display: flex;
+  justify-content: center; */
+  
+  
+}
+
+.blog_post {
+  position:relative;
+  padding: 6rem 3rem 6rem 6rem;
+  background: #fff;
+  max-width: 400px;
+  border-radius: 10px;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  
+  /* top:0; */
+}
+
+.img_pod {
+  height: 110px;
+  width: 110px;
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  z-index: -1;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  position: absolute;
+  left: -50px;
+  top: 10px;
+  transform: translateY(-50%);
+}
+
+.img-r {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+}
+
+.h3-r {
+  margin: 0 0 0.5rem 0;
+  color: #999;
+  font-size: 1.25rem;
+}
+
+.h1-r {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+.p-r {
+  margin: 0 0 4.5rem 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.btn_primary-r {
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  padding: 1.5rem 2rem;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 1px 10px 2rem rgba(255, 94, 98, 0.5);
+  transition: all .2s ease-in;
+  text-decoration: none;
+}
+
+.btn_primary-r:hover {
+  box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
+}
+    </style>
 </head>
 <body>
+
     <div class="box-shadow1">
         <nav class="navbar navbar-expand-lg navbar-dark">
           <img src="{% static 'images/logo.png' %}" width="60" height="60"> &nbsp;&nbsp;
@@ -69,21 +298,75 @@
         </nav>
     </div>
     <body style="background-color: lightblue; ">
-        <p style="text-align: center; font-size: 30px; position: relative; top: 90px;"> Get your predictions for The world famous Tesla brand stock with our advanced regression techniques</p>
-        <form action="/prediction/" method="post" style="margin-top: 100px; margin-left: 350px; position: relative; top: 60px;">
-            {% csrf_token %}
-            <div style="padding-right: 50px; display: inline-block;">
-                <input type = "text" name = "day" placeholder="Enter Date" style="padding-right: 30px;">
+      <div class="box" style="align-self: center;">
+        <div class="content-container" id="empid"
+       style="flex: 1 1 auto;">
+       <p style="text-align: center; font-size: 30px; position: relative; top: 90px;"> Get your predictions for The world famous Tesla brand stock with our advanced regression techniques</p>
+       <form action="/prediction/" method="post" style="margin-top: 100px; margin-left: 350px; position: relative; top: 60px;">
+           {% csrf_token %}
+           <div style="padding-right: 50px; display: inline-block;">
+               <input type = "text" name = "day" placeholder="Enter Date" style="padding-right: 30px;">
+           </div>
+           <div style="padding-right: 50px; display: inline-block;">
+               <input type = "text" name = "month" placeholder="Enter Month" style="padding-right: 30px;">
+           </div>
+           <div style="padding-right: 50px; display: inline-block;">
+               <input type = "text" name = "year" placeholder="Enter Year" style="padding-right: 30px;">
+           </div><br>
+           <!-- <input type="submit" value="Submit values" class="btn btn-danger center"> -->
+           <div style="align-content: center;flex: content; margin-left: -10%;
+           margin-right: 10%;">
+            <br>
+            <br>
+            <center>
+           <!-- <input type="submit" value="Submit values" class="move" style="align-self: center;align-items: center;" data-toggle="modal" data-target="#staticBackdrop" id="b" >  -->
+           <input type="submit" value="Submit values" class="move" style="align-self: center;align-items: center;" id="b" ></center>
+           <!-- Button trigger modal -->
+          <!-- <button type="button" class="btn btn-primary" >
+            Launch static backdrop modal
+          </button> -->
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Feedback</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding:10%">
+                  <center>
+                  <h1>Rate us</h1>
+  
+                  <h2>Rate Your Experience, it helps our model!</h2>
+                    
+                    <div class="rating"><!--
+                    --><input name="stars" id="e5" type="radio"></a><label for="e5">☆</label><!--
+                      --><input name="stars" id="e4" type="radio"></a><label for="e4">☆</label><!--
+                      --><input name="stars" id="e3" type="radio"></a><label for="e3">☆</label><!--
+                      --><input name="stars" id="e2" type="radio"></a><label for="e2">☆</label><!--
+                      --><input name="stars" id="e1" type="radio"></a><label for="e1">☆</label>
+                    </div>
+                  </center>
+                </div>
+                <center>
+                <div class="modal-footer">
+                  
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="move" data-bs-dismiss="modal">Submit</button>
+                
+                </div>
+              </div>
+            </center>
             </div>
-            <div style="padding-right: 50px; display: inline-block;">
-                <input type = "text" name = "month" placeholder="Enter Month" style="padding-right: 30px;">
-            </div>
-            <div style="padding-right: 50px; display: inline-block;">
-                <input type = "text" name = "year" placeholder="Enter Year" style="padding-right: 30px;">
-            </div><br>
-            <input type="submit" value="Submit values" class="btn btn-danger center">
-        </form>
-        <div class="msgdisp" style="position: relative; top: 190px; left: 250px; font-size: 40px;">
+          </div>
+
+          </div>
+       </form> <br> <br> <br> <br> <br> <br>
+        </div>
+        </div>
+        
+        <!-- <div class="msgdisp" style="position: relative; top: 190px; left: 250px; font-size: 40px;">
             {% if messages %}
                 <ul class="messages" style="list-style: none;">
                     {% for message in messages %}
@@ -91,7 +374,74 @@
                     {% endfor %}
                 </ul>
             {% endif %}
-        </div>
+        </div> -->
+
+        <br> <br>
+        <div class="box" id="help" style="align-self: center; display: none;">
+          <div class="content-container" style="flex: 1 1 auto;">
+          <h4> Output </h4> <br>
+          <div id="demo1"> 
+            <center>
+            <br>
+            {% if graph %}
+            {{ graph|safe }}
+            {% else %}
+            <p>No graph was provided.</p>
+            {% endif %}
+            <br>
+            <br>
+            <br>
+            <div class="c">
+            <div class="div-c">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            Chatbot is typing...
+            </div>
+            <!-- <br> <br> <br> <br> <br> <br><br> <br> <br> -->
+            <div id="r" style="display: none;align-self: left;">
+              <div class="wrapper">
+                <div class="blog_post">
+                  <div class="img_pod">
+                    <img class="img-r"src="https://pbs.twimg.com/profile_images/890901007387025408/oztASP4n.jpg" alt="random image">
+                  </div>
+                  <div class="container_copy">
+                    <h3>Predictions</h3>
+                    <h1>Bulls</h1>
+                    <p>The Predicted values are graphed in the histogram. The Values seem to be depicting an upward trend, thus the following stock will do well for the stipulated time period with a value of {{result}} .</p>
+                  </div>
+                  <!-- <a class="btn_primary-r" href='#'>Read More</a> -->
+                </div>
+              </div>
+            </div>
+
+            <div id="r2" style="display: none;align-self: left;">
+              <div class="wrapper">
+                <div class="blog_post">
+                  <div class="img_pod">
+                    <img class="img-r"src="https://pbs.twimg.com/profile_images/890901007387025408/oztASP4n.jpg" alt="random image">
+                  </div>
+                  <div class="container_copy">
+                    <h3>Predictions</h3>
+                    <h1>Bears</h1>
+                    <p>The Predicted values are graphed in the histogram. The Values seem to be depicting a trend that is not satisfactory considering the factors involved. Thus the following stock is not expected to do well for the stipulated time period with a value of {{result}} .</p>
+                  </div>
+                  <!-- <a class="btn_primary-r" href='#'>Read More</a> -->
+                </div>
+              </div>
+            </div>
+          
+          <div id="feedback" style="display:none;"> 
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Feedback
+            </button>
+            </div>
+          </center>
+             </div>
+          </div>
+          </div>
+
     </body>
     <style>
         input[type=text] {
@@ -119,5 +469,85 @@
         <br><br>
         <p class="p2" style="font-size: 25px;">© Copyright 2022 Ubiquant Market Prediction Team</p>
     </footer>
+    <!-- {{form}} -->
 </body>
+
 </html>
+
+<script>
+var x = "{{result}}";
+
+// document.getElementById("staticBackdrop").modal({ show: false});
+
+// Document.getElementById("demo1").innerhtml += x + "ye";
+// document.getElementById("demo1").innerHTML +=x+"ye";
+
+// window.onload = function() {
+//     if (window.jQuery) {  
+//         // jQuery is loaded  
+//         alert("Yeah!");
+//     } else {
+//         // jQuery is not loaded
+//         alert("Doesn't Work");
+//     }
+// }
+
+if(x==0)
+{
+  
+  document.getElementById("help").style.display = "none";
+  
+}
+else
+{
+  
+  document.getElementById("help").style.display = "block";
+  // $("#staticBackdrop").modal('show');
+  setTimeout(function() {
+    $(".c").fadeOut().empty();
+    document.getElementById("feedback").style.display = "block";
+    if(+x>600)
+    {
+      document.getElementById("r").style.display = "block";
+    }
+    else
+    {
+      document.getElementById("r2").style.display = "block";
+    }
+    
+  }, 5000);
+
+  
+
+
+  
+}
+
+$("#b").click(function (){
+// alert("heh");
+});
+
+//   document.getElementById("staticBackdrop").modal('show');
+//   alert("si5");
+// }
+
+// $("#help").innerhtml += "uh";
+
+// $('#b').on('click', function (e) {
+  
+//     var $target = $($(this).data('target'));
+//     $target.data('triggered',true);
+    
+//     setTimeout(function() {
+      
+//         if ($target.data('triggered')) {
+          
+//             $target.modal('show')
+//                 .data('triggered',false); // prevents multiple clicks from reopening
+//         };
+//     }, 3000); // milliseconds
+//     return false;
+// });
+
+
+</script>
